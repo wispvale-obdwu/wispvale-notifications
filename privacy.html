@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="WispVale Notifications：个人本机 Gmail 通知组件的用途、隐私与使用说明。">
+<title>隐私说明 · WispVale Notifications</title>
+<style>
+:root{color-scheme:light;--ink:#173247;--muted:#526879;--line:#d9e4e9;--accent:#146b68;--bg:#f3f7f8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:17px;line-height:1.85}
+a{color:var(--accent);text-underline-offset:.2em}a:hover{text-decoration-thickness:2px}a:focus-visible{outline:3px solid #79b8b5;outline-offset:5px;border-radius:2px}
+.skip{position:absolute;left:16px;top:-100px;background:white;padding:8px}.skip:focus{top:12px}header,main,footer{width:min(880px,calc(100% - 40px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 0}.brand{font-size:18px;font-weight:750;color:var(--ink);text-decoration:none}nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}nav a[aria-current="page"]{color:var(--ink);font-weight:700}
+main{background:white;border:1px solid var(--line);border-radius:18px;padding:44px 50px;box-shadow:0 8px 32px #17324708}.eyebrow{margin:0 0 12px;color:var(--accent);font-weight:700;font-size:14px;letter-spacing:.05em}h1{font-size:clamp(29px,5vw,40px);line-height:1.28;margin:0 0 22px;letter-spacing:-.025em}h2{font-size:21px;margin:34px 0 10px;line-height:1.5}p{margin:12px 0}.lead{font-size:19px;color:var(--muted)}.status{padding:16px 20px;margin:26px 0;background:#edf6f4;border-left:4px solid var(--accent);border-radius:4px}.status strong{display:block}.status p{margin:4px 0 0}ul,ol{padding-left:24px;margin:12px 0}li{margin:8px 0}code{font-family:ui-monospace,monospace;font-size:.9em;padding:2px 5px;background:#eef3f5;border-radius:4px;overflow-wrap:anywhere}.meta{color:var(--muted);font-size:14px}footer{padding:24px 0 36px;color:var(--muted);font-size:14px}footer p{margin:3px 0}.actions{display:flex;flex-wrap:wrap;gap:14px 24px;margin-top:26px}.scope-list strong{display:inline-block;min-width:128px}
+@media(max-width:620px){header{align-items:flex-start;flex-direction:column;gap:12px;padding:24px 0}header,main,footer{width:calc(100% - 28px)}main{padding:28px 22px;border-radius:12px}nav{gap:18px}h2{margin-top:28px}.lead{font-size:18px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳至正文</a>
+<header><a class="brand" href="index.html">WispVale Notifications</a><nav aria-label="主要导航"><a href="index.html">应用说明</a><a href="privacy.html" aria-current="page">隐私说明</a><a href="terms.html">使用条款</a></nav></header>
+<main id="content">
+<p class="eyebrow">WispVale Notifications</p>
+<h1>隐私说明</h1>
+<p class="meta">说明日期：2026-10-24 · 适用于本机个人通知组件及本静态说明站</p>
+<h2>处理的数据与目的</h2>
+<p>组件处理已验证的邮箱地址、Google 账户标识、授权权限和 OAuth 凭据，用于确认固定账户、维护已获准的连接并发送通知。首次身份核验使用 <code>openid</code> 与 <code>email</code>；发信使用 <code>gmail.send</code>。组件不请求读取收件箱、邮件正文或联系人。</p>
+<p>邮件包括既有本机维护任务的状态与失败通知，以及学习晚间提醒和周复盘结果。所需摘要由本地授权流程生成；组件按既定范围向本人固定 Gmail 邮箱发送，不从邮箱收集材料制作摘要。</p>
+<h2>本机保存与保护</h2>
+<p>OAuth 客户端凭据与刷新令牌使用 Windows DPAPI 加密保存在本人电脑，并由本机访问权限限制读取；短期访问令牌只保留在运行内存。本机管理员仍具有管理这台电脑的权限。</p>
+<p>凭据不写入公开网页、笔记库、源码、普通运行日志或分析工件。排障回执保留必要的运行时间、状态、关联标识、错误类别和服务端受理标识；本地通知流程按其已有授权保存待发送消息和回执。</p>
+<h2>数据传输与第三方</h2>
+<p>授权、身份核验和续期需要与 Google 服务通信。获准发送时，邮件内容经 HTTPS 提交给 Google，由 Google 处理投递；相关处理适用 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。</p>
+<p>本组件不出售 Google 用户数据，不将其用于广告、用户画像或通用人工智能模型训练，也不向其他第三方主动共享 OAuth 凭据。</p>
+<p>本应用对通过 Google API 获取的信息的使用和向其他应用的传输遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其 Limited Use 要求。</p>
+<h2>本站公开哪些内容</h2>
+<p>本站只公开这三页应用、隐私和使用说明，不公开本人邮箱地址、本机路径、账户标识、客户端标识、令牌或其他凭据，也不上传 Vault 文件、课程正文、学习记录、通知消息和运行数据。</p>
+<p>本站为不含 JavaScript、分析脚本、广告或外部资源加载的静态页面。若经本人确认使用 GitHub Pages 托管，GitHub 可能为提供服务和安全目的记录访问者 IP 等访问数据，具体适用 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。点击外部政策链接后，目标网站按其自身政策处理访问。</p>
+<h2>保留、停用与撤销</h2>
+<p>本机凭据在该个人连接使用期间保留。本人可前往 <a href="https://myaccount.google.com/connections">Google 账户的第三方连接管理</a>撤销授权；Google 侧撤销与本机组件停用是分别执行的动作。</p>
+<p>清除本地加密凭据需要本人明确操作。本组件没有公开的自助删除入口，也不会在授权失效后自动重新授权。已经投递的邮件由相应 Google 账户管理，不会因撤销授权自动删除。</p>
+<h2>当前接入阶段</h2>
+<p>当前正在接入与验收。授予 OAuth 权限本身不会替代通知启用、测试发信和实际收信的确认。隐私或停用事项由账户持有者通过本机维护流程处理，本站不收集咨询表单或公众注册资料。</p>
+</main>
+<footer><p>WispVale Notifications · 个人本机通知组件</p><p>静态说明页 · 当前处于接入与验收阶段</p></footer>
+</body>
+</html>
